@@ -41,8 +41,14 @@ func InputOX(position string) [2]int {
 	return positions_num
 }
 
-// func PutOX(board [3][3]int, player int, position [2]int) ([3][3]int, string) {
-// 	if board[i][j] != 0 {
-// 		return board, "Can't put in this position!"
-// 	}
-// }
+func PutOX(board [3][3]int, player int, position [2]int) ([3][3]int, string) {
+	i := position[0]
+	j := position[1]
+
+	if board[i][j] != 0 {
+		return board, "Can't put in this position!"
+	}
+
+	board[i][j] = player
+	return board, "Done!"
+}
