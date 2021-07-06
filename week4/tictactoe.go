@@ -112,4 +112,6 @@ func main() {
 			marks++
 		}
 	}
+
+	fmt.Println("Draw!")
 }
