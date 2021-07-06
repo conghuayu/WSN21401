@@ -1,7 +1,7 @@
 package main
 
 import (
-	// 	"fmt"
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -41,9 +41,9 @@ func InputOX(position string) [2]int {
 	return positions_num
 }
 
-func PutOX(board [3][3]int, player int, position [2]int) ([3][3]int, string) {
-	i := position[0]
-	j := position[1]
+func PutOX(board [3][3]int, player int, positions_num [2]int) ([3][3]int, string) {
+	i := positions_num[0]
+	j := positions_num[1]
 
 	if board[i][j] != 0 {
 		return board, "Can't put in this position!"
@@ -51,4 +51,35 @@ func PutOX(board [3][3]int, player int, position [2]int) ([3][3]int, string) {
 
 	board[i][j] = player
 	return board, "Done!"
+}
+
+func main() {
+	board := [3][3]int{
+		{0, 0, 0},
+		{0, 0, 0},
+		{0, 0, 0},
+	}
+
+	for marks := 1; marks <= 9; {
+		var player int
+		var position string
+		var message string
+		if marks%2 == 1 {
+			player = 1
+		} else {
+			player = 2
+		}
+		fmt.Printf("Player %d: Input (x,y) ", player)
+		fmt.Scan(&position)
+
+		positions_num := InputOX(position)
+		board, message = PutOX(board, player, positions_num)
+
+		if message != "Done!" {
+			fmt.Println(message)
+		} else {
+			fmt.Print(ShowBoard(board))
+			marks++
+		}
+	}
 }
