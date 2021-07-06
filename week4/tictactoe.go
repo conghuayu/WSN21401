@@ -46,11 +46,35 @@ func PutOX(board [3][3]int, player int, positions_num [2]int) ([3][3]int, string
 	j := positions_num[1]
 
 	if board[i][j] != 0 {
-		return board, "Can't put in this position!"
+		return board, "Can't put on this position!"
 	}
 
 	board[i][j] = player
 	return board, "Done!"
+}
+
+func tri_equals(i int, j int, k int) bool {
+	if i == j && i == k && j == k {
+		return true
+	} else {
+		return false
+	}
+}
+
+func JudgeWin(board [3][3]int) int {
+	//row
+	for i := 0; i < 3; i++ {
+		if tri_equals(board[i][0], board[i][1], board[i][2]) {
+			return board[i][0]
+		}
+		if tri_equals(board[0][i], board[1][i], board[2][i]) {
+			return board[0][i]
+		}
+	}
+	if tri_equals(board[0][0], board[1][1], board[2][2]) || tri_equals(board[2][0], board[1][1], board[0][2]) {
+		return board[1][1]
+	}
+	return 0
 }
 
 func main() {
@@ -79,6 +103,12 @@ func main() {
 			fmt.Println(message)
 		} else {
 			fmt.Print(ShowBoard(board))
+
+			if JudgeWin(board) != 0 {
+				fmt.Printf("Player %d won!", player)
+				return
+			}
+
 			marks++
 		}
 	}
