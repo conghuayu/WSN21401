@@ -1,9 +1,9 @@
 package main
 
 import (
-// 	"fmt"
-// 	"strconv"
-// 	"strings"
+	// 	"fmt"
+	"strconv"
+	"strings"
 )
 
 func ShowBoard(board [3][3]int) string {
@@ -28,20 +28,18 @@ func ShowBoard(board [3][3]int) string {
 	return str
 }
 
-// func InputOX(player int) [2]int {
-// 	var position string
-// 	fmt.Printf("Player %d: Input (x,y) ", player)
-// 	fmt.Scanln(&position)
+func InputOX(player int, position string) [2]int {
+	// 	fmt.Printf("Player %d: Input (x,y) ", player)
 
-// 	tmp := strings.Replace(position, " ", "", -1)
-// 	positions := strings.Split(tmp, ",")
+	tmp := strings.Replace(position, " ", "", -1)
+	positions := strings.Split(tmp, ",")
 
-// 	i, _ := strconv.Atoi(positions[0])
-// 	j, _ := strconv.Atoi(positions[1])
+	i, _ := strconv.Atoi(positions[0])
+	j, _ := strconv.Atoi(positions[1])
 
-// 	positions_num := [2]int{i, j}
-// 	return positions_num
-// }
+	positions_num := [2]int{i, j}
+	return positions_num
+}
 
 // func PutOX(board [3][3]int, player int, position [2]int) ([3][3]int, string) {
 // 	if board[i][j] != 0 {

@@ -1,7 +1,6 @@
 package main
 
 import (
-	// 	"fmt"
 	"testing"
 )
 
@@ -18,14 +17,15 @@ func TestShowBoard(t *testing.T) {
 	}
 }
 
-// func TestInputOX(t *testing.T) {
-// 	input := 1
-// 	expected := [2]int{0, 1}
-// 	result := InputOX(input)
-// 	if result != expected {
-// 		t.Error("The expected position should be:\nexpected, but is:\nresult")
-// 	}
-// }
+func TestInputOX(t *testing.T) {
+	input_0 := 1
+	input_1 := "0,1"
+	expected := [2]int{0, 1}
+	result := InputOX(input_0, input_1)
+	if result != expected {
+		t.Error("The expected position should be:\nexpected, but is:\nresult")
+	}
+}
 
 // func TestST1(t *testing.T) {
 // 	expected :=
