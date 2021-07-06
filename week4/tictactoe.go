@@ -28,7 +28,7 @@ func ShowBoard(board [3][3]int) string {
 	return str
 }
 
-func InputOX(player int, position string) [2]int {
+func InputOX(position string) [2]int {
 	// 	fmt.Printf("Player %d: Input (x,y) ", player)
 
 	tmp := strings.Replace(position, " ", "", -1)
