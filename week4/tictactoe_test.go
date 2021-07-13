@@ -22,7 +22,11 @@ func TestInputOX(t *testing.T) {
 	expected := [2]int{0, 1}
 	result := InputOX(input)
 	if result != expected {
+<<<<<<< HEAD
 		t.Errorf("The expected position should be:\nexpected, but is:\nresult")
+=======
+		t.Errorf("The expected position should be:\n%v, but is:\n%v", expected, result)
+>>>>>>> dev
 	}
 }
 
@@ -60,6 +64,22 @@ func TestPutOX(t *testing.T) {
 // 	}
 // }
 
+<<<<<<< HEAD
+=======
+func TestJudgeWin(t *testing.T) {
+	input := [3][3]int{
+		{1, 2, 1},
+		{0, 2, 1},
+		{2, 0, 1},
+	}
+	expected := 1
+	result := JudgeWin(input)
+	if result != expected {
+		t.Errorf("The expected situation should be player %d win , but winner is %d", expected, result)
+	}
+}
+
+>>>>>>> dev
 // func TestST2(t *testing.T) {
 // 	expected :=
 // 	result :=
