@@ -5,7 +5,7 @@ import (
 	"testing"
 )
 
-func TestCalRPN01(t *testing.T) {
+func TestCalRPN01(t *testing.T) { //Plus
 	input := []string{"1", "2", "+"}
 	expected := 3
 	result := calRPN(input)
@@ -14,7 +14,7 @@ func TestCalRPN01(t *testing.T) {
 	}
 }
 
-func TestCalRPN02(t *testing.T) {
+func TestCalRPN02(t *testing.T) { //Minus
 	input := []string{"2", "1", "-"}
 	expected := 1
 	result := calRPN(input)
@@ -23,7 +23,7 @@ func TestCalRPN02(t *testing.T) {
 	}
 }
 
-func TestCalRPN03(t *testing.T) {
+func TestCalRPN03(t *testing.T) { //Multiplication
 	input := []string{"2", "3", "*"}
 	expected := 6
 	result := calRPN(input)
@@ -32,7 +32,7 @@ func TestCalRPN03(t *testing.T) {
 	}
 }
 
-func TestCalRPN04(t *testing.T) {
+func TestCalRPN04(t *testing.T) { //Division
 	input := []string{"1", "/", "3", "1", "/", "6", "+"}
 	expected := 1 / 2
 	result := calRPN(input)
